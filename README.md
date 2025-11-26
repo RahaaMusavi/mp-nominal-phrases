@@ -55,7 +55,7 @@ Dependencies are listed in `requirements.txt`.
 
 **Raw corpus:**
 
-* The original Zoroastrian Middle Persian Corpus and Dictionary (MPCD) can be downloaded from [MPCD website](http://www.mpcd.org) (subject to updates and ongoing additions).
+* The original Zoroastrian Middle Persian Corpus and Dictionary (MPCD) can be downloaded from [MPCD](http://www.mpcorpus.org) (subject to updates and ongoing additions).
 * Users must obtain the raw data themselves due to licensing and potential updates.
 
 **Folder structure:**
