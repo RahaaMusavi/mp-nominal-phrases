@@ -105,9 +105,14 @@ Key insights:
 
 ## Citation
 
-If you use this repository or data pipeline in your work, please cite:
+## Cite this repository
 
-> [Your Paper Full Citation Here]
+If you use this repository in your work, please cite it as:
+
+> Raha Musavi. (2025). *Head Directionality and Dependency Marking in Middle Persian: Ezafe Analysis* (Version 1.0) [Computer software]. Zenodo. [https://doi.org/10.5281/zenodo.17722545](https://doi.org/10.5281/zenodo.17722545)
+
+You can also include the DOI badge:
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17722545.svg)](https://doi.org/10.5281/zenodo.17722545)
 
 ---
 
