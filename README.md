@@ -94,13 +94,19 @@ python src/model.py --input data/processed/train.csv --output results/
 
 ## Results
 
-Figures, tables, and SHAP analyses from the paper are stored in `results/`.
+Figures, tables, and SHAP analyses from the paper are stored in `results/`. The repository includes the exact figures used in the published paper:
+
+* `figure1_schematic_of_composite_classification_framework.png` – Schematic of the composite classification framework.
+* `figure2_confusion_matrix.png` – Confusion matrix from the model evaluation.
+* `figure3_SHAP_Summary.png` – SHAP summary plot showing feature importance.
+* `figure4a_Dependence_Depth.png` – Dependence of Ezafe probability on NP depth.
+* `figure4b_Dependence_ModComplexity.png` – Dependence of Ezafe probability on modifier complexity.
+
 Key insights:
 
 * Ezafe probability increases with NP depth and modifier complexity.
 * Unmarked head-final phrases are found in shallow, low-complexity environments.
 * Three domain patterns emerge: Ezafe & head-initial, no-Ezafe & head-final, and no-Ezafe & head-initial (heterogeneous).
-
 ---
 
 ## Citation
