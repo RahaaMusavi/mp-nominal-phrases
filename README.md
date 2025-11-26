@@ -48,17 +48,25 @@ Dependencies are listed in `requirements.txt`.
 
 ## Data
 
-**Note:** Raw corpus data from MPCD cannot be publicly shared due to licensing.
-Processed data used in the analysis are included in `data/processed/`.
+Preprocessed data:
+
+We provide the preprocessed head–modifier pairs used for model training and evaluation in data/processed/.
+
+This dataset is fully reproducible for running the analyses in this repository.
+
+Raw corpus:
+
+The original Zoroastrian Middle Persian Corpus and Dictionary (MPCD) can be downloaded from MPCD website (subject to updates and ongoing additions).
+
+Users must obtain the raw data themselves due to licensing and potential updates.
 
 Folder structure:
 
-```
 data/
-├── raw/          # Original corpus files (not tracked in Git)
-├── processed/    # Cleaned/annotated files for analysis
-```
+├── raw/          # Not included in repo; users should download from MPCD
+├── processed/    # Preprocessed head-modifier pairs included
 
+Note: The preprocessed data captures all necessary information to reproduce the analyses in the paper, even if the raw corpus evolves over time.
 ---
 
 ## Usage
