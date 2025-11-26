@@ -48,26 +48,25 @@ Dependencies are listed in `requirements.txt`.
 
 ## Data
 
-Preprocessed data:
+**Preprocessed data:**
 
-We provide the preprocessed head–modifier pairs used for model training and evaluation in data/processed/.
+* We provide the preprocessed head–modifier pairs used for model training and evaluation in `data/processed/`.
+* This dataset is fully reproducible for running the analyses in this repository.
 
-This dataset is fully reproducible for running the analyses in this repository.
+**Raw corpus:**
 
-Raw corpus:
+* The original Zoroastrian Middle Persian Corpus and Dictionary (MPCD) can be downloaded from [MPCD website](http://www.mpcd.org) (subject to updates and ongoing additions).
+* Users must obtain the raw data themselves due to licensing and potential updates.
 
-The original Zoroastrian Middle Persian Corpus and Dictionary (MPCD) can be downloaded from MPCD website (subject to updates and ongoing additions).
+**Folder structure:**
 
-Users must obtain the raw data themselves due to licensing and potential updates.
-
-Folder structure:
-
+```
 data/
 ├── raw/          # Not included in repo; users should download from MPCD
 ├── processed/    # Preprocessed head-modifier pairs included
+```
 
-Note: The preprocessed data captures all necessary information to reproduce the analyses in the paper, even if the raw corpus evolves over time.
----
+**Note:** The preprocessed data captures all necessary information to reproduce the analyses in the paper, even if the raw corpus evolves over time.
 
 ## Usage
 
