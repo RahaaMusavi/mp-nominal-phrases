@@ -9,6 +9,12 @@ The project uses the Zoroastrian Middle Persian Corpus and Dictionary (MPCD), to
 
 ---
 
+**Musavi, Raha. (2025). Head Directionality and Dependency Marking in Middle Persian Nominal Phrases: Quantitative Evidence from Ezafe Constructions.**
+
+The project uses the Zoroastrian Middle Persian Corpus and Dictionary (MPCD), together with machine-learning methods (Random Forests, Boruta feature selection, and SHAP interpretability), to identify structural and lexical correlates of Ezafe marking and head directionality.
+
+---
+
 ## Table of Contents
 - Project Overview
 - Repository Structure
@@ -27,20 +33,22 @@ The project uses the Zoroastrian Middle Persian Corpus and Dictionary (MPCD), to
 The project investigates:
 
 - Predictors of Ezafe presence
-- Predictors of head-initial vs. head-final ordering
+- Predictors of head–initial vs. head–final ordering
 - Variation and stability patterns in the nominal phrase
 - Interpretable machine learning for historical syntax
 
 The analysis is fully reproducible given:
 
-1. The preprocessed dataset shipped in this repository
-2. The trained model artifacts produced by the notebooks
+1. The preprocessed dataset shipped in this repository  
+2. The trained model artifacts produced by the notebooks  
 
 ---
 
 ## Repository Structure
 
-Repository Structure
+Below is the structure of the repository:
+
+```text
 mp-nominal-phrases/
 │
 ├── data/
