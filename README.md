@@ -1,127 +1,203 @@
-# Middle Persian Ezafe Analysis
+# Middle Persian Ezafe Analysis  
+Quantitative analysis of Ezafe marking and head–modifier directionality in Middle Persian nominal phrases.
 
-Quantitative analysis of Ezafe linking and head–modifier order in Middle Persian nominal phrases, using the Zoroastrian Middle Persian Corpus and Dictionary (MPCD). This repository contains scripts, notebooks, and results to reproduce the analyses from our paper:
+This repository contains all code, notebooks, and preprocessed data required to reproduce the results reported in:
 
-**Head Directionality and Dependency Marking in Middle Persian Nominal Phrases: Quantitative Evidence from Ezafe Constructions**
-*Abstract available in the paper.*
+**Musavi, Raha. (2025). Head Directionality and Dependency Marking in Middle Persian Nominal Phrases: Quantitative Evidence from Ezafe Constructions.**
+
+The project uses the Zoroastrian Middle Persian Corpus and Dictionary (MPCD), together with machine-learning methods (Random Forests, Boruta feature selection, and SHAP interpretability), to identify structural and lexical correlates of Ezafe marking and head directionality.
 
 ---
 
 ## Table of Contents
-
-* [Project Overview](#project-overview)
-* [Installation](#installation)
-* [Data](#data)
-* [Usage](#usage)
-* [Results](#results)
-* [Citation](#citation)
-* [License](#license)
+- Project Overview
+- Repository Structure
+- Data
+- Installation
+- Usage
+- Notebooks
+- Artifacts
+- Citation
+- License
 
 ---
 
 ## Project Overview
 
-This project investigates the interaction between head directionality and Ezafe marking in Middle Persian nominal phrases. Using 8,019 annotated head–modifier pairs, we implement a reproducible machine learning pipeline (Random Forests, Boruta feature selection, SHAP interpretability) to identify structural and lexical predictors of Ezafe presence and head-final/head-initial order.
+The project investigates:
 
-Key contributions:
+- Predictors of Ezafe presence
+- Predictors of head-initial vs. head-final ordering
+- Variation and stability patterns in the nominal phrase
+- Interpretable machine learning for historical syntax
 
-* Classification of Ezafe presence and head directionality with 81.53% mean accuracy.
-* Feature analyses highlighting NP depth, modifier complexity, and anchoring dependents.
-* Identification of distinct domains of stability and heterogeneity in Middle Persian nominal phrases.
-* A fully reproducible pipeline for historical syntax research, addressing common pitfalls like data leakage and class imbalance.
+The analysis is fully reproducible given:
+
+1. The preprocessed dataset shipped in this repository
+2. The trained model artifacts produced by the notebooks
 
 ---
 
-## Installation
+## Repository Structure
 
-Clone this repository and install dependencies:
+mp-nominal-phrases/
+│
+├── data/
+│ └── preprocessed/
+│ └── head_modifiers_pairs.csv # shipped with repository
+│
+├── notebooks/
+│ ├── 01_exploratory_analysis.ipynb
+│ ├── 02_model_training.ipynb
+│ └── 03_shap_analysis.ipynb
+│
+├── artifacts/
+│ ├── best_pipeline_combined.joblib
+│ ├── selected_feature_names.joblib
+│ └── feature_analysis/
+│ └── … generated outputs …
+│
+├── src/
+│ ├── preprocessing.py
+│ ├── features.py
+│ ├── model.py
+│ └── utils.py
+│
+├── README.md
+├── LICENSE
+└── requirements.txt
 
-```bash
-git clone https://github.com/[your-username]/middle-persian-ezafe-analysis.git
-cd middle-persian-ezafe-analysis
-pip install -r requirements.txt
-```
-
-Dependencies are listed in `requirements.txt`.
+yaml
+Code kopieren
 
 ---
 
 ## Data
 
-**Preprocessed data:**
+### Preprocessed Data (included)
 
-* We provide the preprocessed head–modifier pairs used for model training and evaluation in `data/processed/`.
-* This dataset is fully reproducible for running the analyses in this repository.
+The file:
 
-**Raw corpus:**
+data/preprocessed/head_modifiers_pairs.csv
 
-* The original Zoroastrian Middle Persian Corpus and Dictionary (MPCD) can be downloaded from [MPCD](http://www.mpcorpus.org) (subject to updates and ongoing additions).
-* Users must obtain the raw data themselves due to licensing and potential updates.
+yaml
+Code kopieren
 
-**Folder structure:**
+contains all head–modifier pairs and derived structural features required to reproduce the analysis.
 
-```
-data/
-├── raw/          # Not included in repo; users should download from MPCD
-├── processed/    # Preprocessed head-modifier pairs included
-```
+Because the MPCD is under ongoing revision and licensing constraints, raw data are **not included**, but the preprocessed dataset is sufficient for replication.
 
-**Note:** The preprocessed data captures all necessary information to reproduce the analyses in the paper, even if the raw corpus evolves over time.
+---
 
-## Usage
-
-### Notebooks
-
-* `notebooks/exploration.ipynb`: Exploratory data analysis, visualizations.
-* `notebooks/modeling.ipynb`: Model training, evaluation, and feature analysis.
-
-### Scripts
-
-Scripts in `src/` can be run individually or integrated into a pipeline:
-
-* `preprocessing.py` – prepares the data.
-* `features.py` – computes features for ML.
-* `model.py` – trains and evaluates Random Forest models.
-* `utils.py` – helper functions.
-
-Example command:
+## Installation
 
 ```bash
-python src/model.py --input data/processed/train.csv --output results/
-```
+git clone https://github.com/RahaaMusavi/mp-nominal-phrases.git
+cd mp-nominal-phrases
+pip install -r requirements.txt
+Usage
+The analysis proceeds in three conceptual phases:
 
----
+Exploration — descriptive statistics and visualizations
 
-## Results
+Model Training — training classifiers, evaluating performance, running Boruta
 
-Figures, tables, and SHAP analyses from the paper are stored in `results/`. The repository includes the exact figures used in the published paper:
+Interpretability — global and per-class SHAP analysis
 
-* `figure1_schematic_of_composite_classification_framework.png` – Schematic of the composite classification framework.
-* `figure2_confusion_matrix.png` – Confusion matrix from the model evaluation.
-* `figure3_SHAP_Summary.png` – SHAP summary plot showing feature importance.
-* `figure4a_Dependence_Depth.png` – Dependence of Ezafe probability on NP depth.
-* `figure4b_Dependence_ModComplexity.png` – Dependence of Ezafe probability on modifier complexity.
+Everything is orchestrated through Jupyter notebooks.
 
-Key insights:
+Notebooks
+01_exploratory_analysis.ipynb
+Loads the preprocessed dataset
 
-* Ezafe probability increases with NP depth and modifier complexity.
-* Unmarked head-final phrases are found in shallow, low-complexity environments.
-* Three domain patterns emerge: Ezafe & head-initial, no-Ezafe & head-final, and no-Ezafe & head-initial (heterogeneous).
----
+Computes descriptive statistics
 
-## Citation
+Produces visual summaries
 
-## Cite this repository
+Prepares data for modelling
 
-If you use this repository in your work, please cite it as:
+02_model_training.ipynb
+Produces:
 
-> Raha Musavi. (2025). *Head Directionality and Dependency Marking in Middle Persian: Ezafe Analysis* (Version 1.0) [Computer software]. Zenodo. [https://doi.org/10.5281/zenodo.17722545](https://doi.org/10.5281/zenodo.17722545)
+Random Forest classifier
 
-You can also include the DOI badge:
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17722545.svg)](https://doi.org/10.5281/zenodo.17722545)
+Boruta feature selection
 
----
+Final trained pipeline (saved to artifacts/best_pipeline_combined.joblib)
 
-## License
+Selected feature names (artifacts/selected_feature_names.joblib)
 
-This repository is licensed under the MIT License. See [LICENSE](LICENSE) for details.
+The pipeline is saved using joblib and can be reloaded by downstream notebooks.
+
+03_shap_analysis.ipynb
+Uses:
+
+Trained classifier
+
+Preprocessing pipeline
+
+Boruta mask
+
+Selected feature names
+
+Produces:
+
+Global feature importance (SHAP)
+
+Per-class SHAP summaries
+
+Impurity-based class importance
+
+Table of directional effects
+
+Publication-ready figures
+
+SHAP handling in this notebook is version-robust and correctly handles:
+
+Binary classifiers
+
+Multi-class classifiers
+
+Older and newer SHAP API return formats
+
+All generated tables and figures are written into:
+
+bash
+Code kopieren
+artifacts/feature_analysis/
+Artifacts / Files Expected
+The SHAP notebook expects:
+
+Code kopieren
+artifacts/
+│
+├── best_pipeline_combined.joblib
+├── selected_feature_names.joblib
+└── feature_analysis/   (created automatically)
+The Model Training notebook is responsible for creating those files.
+
+Reproducibility Notes
+All randomness uses fixed seeds to ensure repeatability.
+
+Class imbalance is addressed using oversampling.
+
+No data leakage occurs across folds.
+
+The analysis is deterministic given the provided data and versions.
+
+Citation
+If you use this repository in your work, please cite:
+
+bash
+Code kopieren
+Musavi, Raha. (2025). Head Directionality and Dependency Marking in Middle Persian:
+Ezafe Analysis (Version 1.0) [Computer software]. Zenodo.
+https://doi.org/10.5281/zenodo.17722545
+License
+MIT License — see LICENSE.
+
+Contact / Issues
+Questions, bug reports, or requests for additional documentation are welcome via GitHub Issues.
+
+yaml
+Code kopieren
