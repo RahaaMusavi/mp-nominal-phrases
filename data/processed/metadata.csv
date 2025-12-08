@@ -1,0 +1,13 @@
+column_name,value
+dataset_name,Middle Persian Ezafe Head–Modifier Pairs
+description,Preprocessed head–modifier pairs extracted from the Zoroastrian Middle Persian Corpus and Dictionary (MPCD) for analyses of Ezafe marking and head directionality
+source,MPCD ([https://mpcorpus.org](https://mpcorpus.org))
+source_access,Data must be downloaded from MPCD website; this repository contains only preprocessed pairs
+version,1.0
+release_date,2025-11-26
+preprocessing_notes,"Extracted 8,019 head–modifier pairs; filtered for clear NP boundaries; computed NP depth, modifier complexity, and context features; removed duplicates; encoded Ezafe presence and head position."
+contact_author,Seyyedeh Fatemeh Musavi, [seyyedehfatemeh.musavi@ruhr-uni-bochum.de](mailto:seyyedehfatemeh.musavi@ruhr-uni-bochum.de)
+license,CC-BY 4.0 (for preprocessed data)
+doi,10.5281/zenodo.17722545
+citation,"Musavi, Raha (2025). Head directionality and Ezafe in Middle Persian: Preprocessed head–modifier pairs [Computer software]. Zenodo. [https://doi.org/10.5281/zenodo.17722545](https://doi.org/10.5281/zenodo.17722545)"
+comments,"This dataset is sufficient to replicate all analyses in the associated paper. Raw MPCD data not included due to licensing."
