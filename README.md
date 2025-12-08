@@ -40,6 +40,7 @@ The analysis is fully reproducible given:
 
 ## Repository Structure
 
+Repository Structure
 mp-nominal-phrases/
 │
 ├── data/
@@ -60,8 +61,7 @@ mp-nominal-phrases/
 ├── scripts/
 │   ├── preprocess_data.py
 │   ├── train_model.py
-│   ├── evaluate_model.py
-│   
+│   └── evaluate_model.py
 │
 ├── README.md
 ├── LICENSE
