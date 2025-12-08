@@ -74,6 +74,7 @@ data/
 
 * `notebooks/exploration.ipynb`: Exploratory data analysis, visualizations.
 * `notebooks/modeling.ipynb`: Model training, evaluation, and feature analysis.
+* `notebooks/shap_analysis.ipynb`: Feature Analyses.
 
 ### Scripts
 
