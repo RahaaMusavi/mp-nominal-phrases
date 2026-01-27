@@ -37,8 +37,8 @@ Key contributions:
 Clone this repository and install dependencies:
 
 ```bash
-git clone https://github.com/rahaamusavi/middle-persian-ezafe-analysis.git
-cd middle-persian-ezafe-analysis
+git clone https://github.com/RahaaMusavi/mp-nominal-phrases.git
+cd mp-nominal-phrases
 pip install -r requirements.txt
 ```
 
