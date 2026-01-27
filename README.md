@@ -37,7 +37,7 @@ Key contributions:
 Clone this repository and install dependencies:
 
 ```bash
-git clone https://github.com/[your-username]/middle-persian-ezafe-analysis.git
+git clone https://github.com/rahaamusavi/middle-persian-ezafe-analysis.git
 cd middle-persian-ezafe-analysis
 pip install -r requirements.txt
 ```
