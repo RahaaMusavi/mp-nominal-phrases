@@ -1,4 +1,4 @@
-# Head Directionality and Dependency Marking in Middle Persian Nominal Phrases: Quantitative Evidence from Ezafe Constructions
+# MP Noun Phrase
 
 Quantitative analysis of Ezafe linking and head–modifier order in Middle Persian nominal phrases, using the Zoroastrian Middle Persian Corpus and Dictionary (MPCD). This repository contains scripts, notebooks, and results to reproduce the analyses from our paper:
 
